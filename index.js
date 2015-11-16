@@ -24,13 +24,6 @@ var requireAuth = function(req, res, next) {
     }
 }
 
-app.use(function(req, res, next) {
-    console.log(req.body);
-    setTimeout(function() {
-        next()
-    },500)
-})
-
 app.route('/')
 .get([requireAuth],function(req, res, next) {
     res.send({status:200})
