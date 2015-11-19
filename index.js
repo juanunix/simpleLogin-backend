@@ -6,6 +6,8 @@ var express = require('express'),
     methodOverride = require('method-override');
 var Model = require('./schema');
 
+var PORT = process.env.PORT || 5000;
+
 var app = express()
 app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(require('morgan')('dev'));
@@ -59,7 +61,7 @@ app.route('/users')
 
 app.route('/users/:id')
 
-app.listen(5000, function() {
+app.listen(PORT, function() {
     console.log('Connected')
 })
 
